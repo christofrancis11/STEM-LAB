@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAEDGE STEM Lab - Robotics, AI & Quantum for School</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+
+  <!-- Main Desktop Centered Shell Wrapper -->
+  <div class="desktop-wrapper">
+    
+    <!-- Phone Mockup Container -->
+    <div class="phone-frame dark-header" id="phone-frame">
+      
+      <!-- Phone Top Notch/Camera -->
+      <div class="phone-notch">
+        <div class="phone-speaker"></div>
+        <div class="phone-camera"></div>
+      </div>
+      
+      <!-- Phone System Status Bar -->
+      <div class="phone-status-bar">
+        <div class="status-time">9:41</div>
+        <div class="status-bar-icons">
+          <!-- Network Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M2 22h20V2z" fill="currentColor"/>
+          </svg>
+          <!-- Wifi Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M12 21a2 2 0 100-4 2 2 0 000 4z M4.828 10a10 10 0 0114.344 0 M1.414 6.586a15 15 0 0121.172 0 M8.464 13.536a5 5 0 017.072 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <!-- Battery Icon -->
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="5" width="16" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 9v6h2V9z" fill="currentColor"/>
+            <rect x="5" y="8" width="10" height="8" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Phone Inner Screen -->
+      <div class="phone-screen">
+        
+        <!-- TOAST ALERTS (Floating) -->
+        <div class="toast-container">
+          <div class="toast" id="toast">
+            <span class="toast-icon"></span>
+            <span class="toast-text">Alert message</span>
+          </div>
+        </div>
+
+        <!-- MODAL OVERLAYS (Checkout/Payment Process) -->
+        <div class="modal-overlay" id="modal-overlay">
+          <div class="modal-content">
+            <!-- Rendered Dynamically via app.js -->
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------
+             PAGE 1: Welcome / Landing
+             ------------------------------------------------------------- -->
+        <div class="screen dark-theme active" id="screen-landing">
+          <div class="screen-content">
+            
+            <div class="welcome-brand-container">
+              <div class="welcome-logo-wrapper">
+                <img src="assets/logo.png" alt="SAEDGE Logo" style="width:100%; height:100%;">
+              </div>
+              <p class="welcome-presents">Presents</p>
+              <h1 class="welcome-title">THE STEM LAB</h1>
+              <p class="welcome-subtitle">Robotics, AI, Quantum and Electronics for School</p>
+            </div>
+
+            <div class="welcome-illustration-container">
+              <img src="assets/stem-illustration.svg" alt="STEM Lab Illustration" class="welcome-illustration">
+            </div>
+
+            <!-- Indicator Carousel Dots -->
+            <div class="carousel-dots">
+              <div class="dot active"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+
+            <p class="welcome-action-text">New User Registration or Login</p>
+            <button class="btn btn-primary" data-nav="login">
+              Continue
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------
+             PAGE 2: Registration
+             ------------------------------------------------------------- -->
+        <div class="screen light-theme" id="screen-register">
+          
+          <div class="screen-header">
+            <button class="back-btn" data-nav="login">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+            <h2>Registration</h2>
+            <div class="header-spacer"></div>
+          </div>
+
+          <div class="screen-content">
+            
+            <div class="profile-upload-container">
+              <div class="profile-avatar-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <div class="plus-icon">+</div>
+              </div>
+            </div>
+
+            <form class="registration-form" id="registration-form">
+              
+              <!-- Full Name -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <input type="text" class="form-control" id="reg-name" placeholder="Full Name" required>
+                </div>
+              </div>
+
+              <!-- Mobile Number -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  <input type="tel" class="form-control" id="reg-mobile" placeholder="Mobile Number" maxlength="10" required>
+                </div>
+              </div>
+
+              <!-- Age -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <input type="number" class="form-control" id="reg-age" placeholder="Age" min="5" max="99" required>
+                </div>
+              </div>
+
+              <!-- Class Dropdown -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                  <select class="form-control" id="reg-class" required>
+                    <option value="" disabled selected>Class</option>
+                    <option value="Class 5">Class 5</option>
+                    <option value="Class 6">Class 6</option>
+                    <option value="Class 7">Class 7</option>
+                    <option value="Class 8">Class 8</option>
+                    <option value="Class 9">Class 9</option>
+                    <option value="Class 10">Class 10</option>
+                    <option value="Class 11">Class 11</option>
+                    <option value="Class 12">Class 12</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <input type="text" class="form-control" id="reg-address" placeholder="Address" required>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <input type="email" class="form-control" id="reg-email" placeholder="Email" required>
+                </div>
+              </div>
+
+              <!-- Gender -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><path d="M12 2a5 5 0 100 10 5 5 0 000-10z M12 14c-4 0-7 2-7 6v2h14v-2c0-4-3-6-7-6z"/></svg>
+                  <select class="form-control" id="reg-gender" required>
+                    <option value="" disabled selected>Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Create Login ID -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                  <input type="text" class="form-control" id="reg-login-id" placeholder="Create Login ID" required>
+                </div>
+              </div>
+
+              <!-- Create Password -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                  <input type="password" class="form-control" id="reg-password" placeholder="Create Password" required>
+                  <button class="password-toggle" type="button" data-target="reg-password">
+                    <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                  <input type="password" class="form-control" id="reg-confirm-password" placeholder="Confirm Password" required>
+                  <button class="password-toggle" type="button" data-target="reg-confirm-password">
+                    <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Warning registration fee box -->
+              <div class="notice-box">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="16" x2="12" y2="12"/>
+                  <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                <span>No registration fee</span>
+              </div>
+
+              <button type="submit" class="btn btn-dark-action">Create Account</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------
+             PAGE 3: Login
+             ------------------------------------------------------------- -->
+        <div class="screen dark-theme" id="screen-login">
+          <div class="screen-content">
+            
+            <div class="login-logo-container">
+              <div class="login-logo-wrapper">
+                <img src="assets/logo.png" alt="SAEDGE Logo" style="width:100%; height:100%;">
+              </div>
+            </div>
+
+            <div class="login-welcome-text">
+              <h3>Welcome Back!</h3>
+              <p>Login to continue</p>
+            </div>
+
+            <form class="registration-form" id="login-form" style="z-index: 5; position: relative;">
+              <!-- Login ID -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <input type="text" class="form-control" id="login-id" placeholder="Login ID" required>
+                </div>
+              </div>
+
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                  <input type="password" class="form-control" id="login-password" placeholder="Password" required>
+                  <button class="password-toggle" type="button" data-target="login-password">
+                    <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <a href="#" class="login-options-link" onclick="alert('Demo ID is \'demo\' and Password is \'password123\'')">Forgot Password?</a>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: 16px;">Login</button>
+              
+              <div class="login-divider">OR</div>
+
+              <button type="button" class="btn btn-outline-orange" data-nav="register">New User? Register Here</button>
+            </form>
+
+            <!-- Bottom Circuit Graphic Backdrop -->
+            <div class="login-circuit-bg">
+              <svg viewBox="0 0 400 100">
+                <defs>
+                  <linearGradient id="neon-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.1"/>
+                    <stop offset="50%" stop-color="#ff8c00" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#00d2ff" stop-opacity="0.1"/>
+                  </linearGradient>
+                </defs>
+                <path d="M 0,80 L 120,80 L 150,50 L 250,50 L 280,80 L 400,80 M 150,50 L 160,30 L 240,30 L 250,50 M 90,80 L 105,65 M 310,80 L 295,65" fill="none" stroke="url(#neon-glow)" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="160" cy="30" r="3.5" fill="#ff8c00" />
+                <circle cx="240" cy="30" r="3.5" fill="#ff8c00" />
+                <circle cx="105" cy="65" r="3" fill="#00d2ff" />
+                <circle cx="295" cy="65" r="3" fill="#00d2ff" />
+              </svg>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------
+             PAGE 4: Programs Information & Payment
+             ------------------------------------------------------------- -->
+        <div class="screen light-theme" id="screen-programs">
+          
+          <div class="screen-header">
+            <button class="back-btn" data-nav="landing">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+            <h2>Programs</h2>
+            <div class="header-spacer"></div>
+          </div>
+
+          <div class="screen-content">
+            
+            <div class="programs-section-title">Choose a Program</div>
+
+            <div class="programs-list">
+              <!-- Robotics Card -->
+              <div class="program-card selected" data-program="robotics">
+                <div class="program-details-left">
+                  <div class="program-icon-box">
+                    <!-- Robot Icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="10" rx="2"/>
+                      <circle cx="12" cy="5" r="2"/>
+                      <path d="M12 7v4M8 15h.01M16 15h.01M9 18h6"/>
+                    </svg>
+                  </div>
+                  <div class="program-info-text">
+                    <h4>Robotics</h4>
+                    <p>Learn robotics concepts and build intelligent robots.</p>
+                  </div>
+                </div>
+                <div class="program-radio"></div>
+              </div>
+
+              <!-- AI Card -->
+              <div class="program-card" data-program="ai">
+                <div class="program-details-left">
+                  <div class="program-icon-box">
+                    <!-- AI Brain Icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96-.44 2.5 2.5 0 010-3.12 3 3 0 010-4.88 2.5 2.5 0 010-3.12A2.5 2.5 0 019.5 2zM14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96-.44 2.5 2.5 0 000-3.12 3 3 0 000-4.88 2.5 2.5 0 000-3.12A2.5 2.5 0 0014.5 2z"/>
+                    </svg>
+                  </div>
+                  <div class="program-info-text">
+                    <h4>AI & Machine Learning</h4>
+                    <p>Explore the world of Artificial Intelligence.</p>
+                  </div>
+                </div>
+                <div class="program-radio"></div>
+              </div>
+
+              <!-- Quantum Card -->
+              <div class="program-card" data-program="quantum">
+                <div class="program-details-left">
+                  <div class="program-icon-box">
+                    <!-- Quantum Orbit Icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="12" cy="12" rx="3" ry="9" transform="rotate(45 12 12)"/>
+                      <ellipse cx="12" cy="12" rx="3" ry="9" transform="rotate(-45 12 12)"/>
+                      <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                  </div>
+                  <div class="program-info-text">
+                    <h4>Quantum Computing</h4>
+                    <p>Introduction to quantum computing and applications.</p>
+                  </div>
+                </div>
+                <div class="program-radio"></div>
+              </div>
+
+              <!-- Electronics Card -->
+              <div class="program-card" data-program="electronics">
+                <div class="program-details-left">
+                  <div class="program-icon-box">
+                    <!-- Microchip Icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="4" y="4" width="16" height="16" rx="2"/>
+                      <rect x="9" y="9" width="6" height="6"/>
+                      <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/>
+                    </svg>
+                  </div>
+                  <div class="program-info-text">
+                    <h4>Electronics</h4>
+                    <p>Learn electronics basics and hands-on projects.</p>
+                  </div>
+                </div>
+                <div class="program-radio"></div>
+              </div>
+            </div>
+
+            <!-- Sessions selector -->
+            <div class="sessions-selector-box">
+              <div class="programs-section-title">Number of Sessions</div>
+              <div class="form-group">
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <select class="form-control" id="sessions-count">
+                    <option value="4">4 Sessions (Quickstart Intro)</option>
+                    <option value="8" selected>8 Sessions (Standard Lab)</option>
+                    <option value="12">12 Sessions (Advanced Explorer)</option>
+                    <option value="16">16 Sessions (Master Project Build)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic Pricing summary card -->
+            <div class="fee-summary-card">
+              <div class="fee-row">
+                <span>Program Fee</span>
+                <span class="price" id="calc-program-fee">₹ 2,500</span>
+              </div>
+              <div class="fee-row">
+                <span>No Registration Fee</span>
+                <span class="price">₹ 0</span>
+              </div>
+              <div class="fee-row total">
+                <span>Total Amount</span>
+                <span class="price" id="calc-total-amount">₹ 2,500</span>
+              </div>
+            </div>
+
+            <!-- Payment Method Segment selector -->
+            <div class="payment-methods-box">
+              <div class="programs-section-title">Payment Method</div>
+              <div class="payment-methods-segment">
+                <button class="payment-method-btn active" data-method="UPI">UPI</button>
+                <button class="payment-method-btn" data-method="Card">Card</button>
+                <button class="payment-method-btn" data-method="Net Banking">Net Banking</button>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" id="pay-now-btn">Pay Now</button>
+
+            <!-- Success note -->
+            <div class="pay-disclaimer">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-width="2" stroke-linecap="round"/>
+                <polyline points="22 4 12 14.01 9 11.01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Receipt will be sent to your email</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------
+             PAGE 5: Sessions Dashboard (Extra premium feature)
+             ------------------------------------------------------------- -->
+        <div class="screen light-theme" id="screen-sessions">
+          <div class="screen-header">
+            <div class="header-spacer"></div>
+            <h2>My Sessions</h2>
+            <div class="header-spacer"></div>
+          </div>
+          
+          <div class="screen-content" id="sessions-content-container">
+            <!-- Dynamic Rendered via app.js -->
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------
+             PAGE 6: Student Profile
+             ------------------------------------------------------------- -->
+        <div class="screen light-theme" id="screen-profile">
+          <div class="screen-header">
+            <div class="header-spacer"></div>
+            <h2>Profile</h2>
+            <div class="header-spacer"></div>
+          </div>
+          
+          <div class="screen-content">
+            
+            <div class="profile-card">
+              <div class="profile-img-large">
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <h3 class="profile-name" id="profile-student-name">Student Name</h3>
+              <p class="profile-role">STEM Innovator Member</p>
+            </div>
+
+            <!-- Profile Fields rendered here -->
+            <div class="profile-info-list" id="profile-details-container">
+              <!-- Rendered via app.js -->
+            </div>
+
+            <button class="btn btn-outline-orange" id="profile-logout-btn">Log Out</button>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Shared Phone Bottom Navigation Bar (Hidden for welcome, register, login) -->
+      <div class="phone-navbar" id="phone-navbar" style="display: none;">
+        <!-- Home / Landing -->
+        <button class="nav-item active" data-screen="landing">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Home
+        </button>
+        <!-- Programs List -->
+        <button class="nav-item" data-screen="programs">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1" stroke-width="2"/><rect x="14" y="3" width="7" height="5" rx="1" stroke-width="2"/><rect x="14" y="12" width="7" height="9" rx="1" stroke-width="2"/><rect x="3" y="16" width="7" height="5" rx="1" stroke-width="2"/></svg>
+          Programs
+        </button>
+        <!-- My Sessions -->
+        <button class="nav-item" data-screen="sessions">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10" stroke-width="2"/></svg>
+          My Sessions
+        </button>
+        <!-- Profile -->
+        <button class="nav-item" data-screen="profile">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke-width="2"/></svg>
+          Profile
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
